@@ -16,6 +16,8 @@
     <title>SpotiVue</title>
   </head>
   <body>
+    <div id="app">
+    <!-- header (logo img) -->
     <header>
       <img src="download.png" alt="">
       <select class="" name="">
@@ -27,10 +29,7 @@
       </select>
     </header>
 
-    <div id="app" class="wrapper">
-
-    <!-- header (logo img) -->
-
+    <div class="wrapper">
     <!-- card album (author, genre, date...) -->
       <div class="card" v-for="album in albums">
         <img :src="album.poster" alt="">
@@ -39,10 +38,8 @@
         <!-- <span class="genre">{{album.genre}}</span> -->
         <span class="year">{{album.year}}</span>
       </div>
-
-
-
     </div>
+  </div>
 
     <!-- javascript -->
     <script src="js/script.js" charset="utf-8"></script>
