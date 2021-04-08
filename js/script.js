@@ -12,15 +12,11 @@ let app = new Vue (
       .then(function (response) {
 
         self.albums = response.data.response;
-        self.albums.sort(function(a, b){return a-b});
+        // filtro in ordine gli album dal  piu vecchio
+        self.albums.sort((a, b)=>{return a.year - b.year});
       });
     },
     methods: {
-      orderedAlbums: function(){
-            this.albums.sort((a, b) => {
-                return a.year - b.year;
-            });
-
 
     }
   }
