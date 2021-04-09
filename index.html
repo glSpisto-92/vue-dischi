@@ -20,18 +20,15 @@
     <!-- header (logo img) -->
     <header>
       <img src="download.png" alt="">
-      <select class="" name="">
-        <option value="">All genre</option>
-        <option value="">Rock</option>
-        <option value="">Pop</option>
-        <option value="">Jazz</option>
-        <option value="">Metal</option>
+      <select class="" name="genres" v-model="genreSelect">
+        <option value="">All genres</option>
+        <option :value="genre" v-for="genre in genres">{{genre}}</option>
       </select>
     </header>
 
     <div class="wrapper">
-    <!-- card album (author, genre, date...) -->
-      <div class="card" v-for="album in albums">
+     <!-- card album (author, genre, date...)    condizione che torna gli album per generi o tutti gli albums -->
+      <div class="card" v-for="album in albums" v-if="album.genre == genreSelect || genreSelect == '' ">
         <img :src="album.poster" alt="">
         <h3 class="title">{{album.title}}</h3>
         <span class="author">{{album.author}}</span>
